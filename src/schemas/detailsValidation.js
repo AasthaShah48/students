@@ -10,7 +10,7 @@ export const detailsValidation = values => {
     } else if (isNaN(Number(values.marks))) {
       errors.marks = 'Must be a number'
     } else if ((Number(values.marks)) > 100) {
-      errors.marks = 'Marks must be 100 out of'
+      errors.marks = 'Marks must be out of 100'
     }
     if (values.class === " ") {
       errors.class = 'Required'

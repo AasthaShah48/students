@@ -31,7 +31,7 @@
   if (!values.phone) {
     errors.phone = 'Required'
   } else if (!/^[6-9]\d{9}$/gi.test(values.phone)) {
-    errors.phone = 'Invalid phone number, must be 10 digits and an Indian Number'
+    errors.phone = 'Invalid phone number, must be 10 digits '
   }
   if (!values.password) {
     errors.password = 'Required'
