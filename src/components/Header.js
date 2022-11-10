@@ -64,7 +64,7 @@ const Header = () => {
                  Student Profile
                </Typography>        
                <IconButton aria-describedby="update-box" color='inherit' variant="contained" aria-haspopup="true" aria-controls="update-box"  onClick={() => {setStart(true); }}>
-               <Avatar src={data.toString()} /> 
+               { data.length>0 && data ? <Avatar src={data.toString()} /> :  <Avatar src='profile.png' />  }      
                </IconButton> 
                <ModalRaw
                    id="update-box"

@@ -194,10 +194,11 @@ function StudentDetails() {
          component="img"
          height="120"
          width="150"
-         image = {data.toString()} />  : <CardContent> <Typography color='primary' gutterBottom variant="h6"  sx={{  fontFamily : `Roboto`, alignItems:'center'  , fontStyle: 'oblique' , fontWeight:'bold'}}>
-            Upload Your Photo
-         <AccountBoxIcon/>
-         </Typography> </CardContent>  }      
+         image = {data.toString()} />  :  <CardMedia
+         component="img"
+         height="120"
+         width="150"
+         image = 'profile.png'/>  }      
       <TextField type="file" accept='.png, .jpg, .jpeg'  sx={{ display: 'none' }} onChange={handleFileUpload} /> 
        <CardContent>
           <Typography height='50' gutterBottom variant="h6" component="div" sx={{ border: '1px solid', borderColor: 'blueviolet' ,fontSize:'80%', fontFamily : `Roboto`, alignItems:'center' , color: 'midnightblue' , fontStyle: 'oblique' , fontWeight:'bold'}}>

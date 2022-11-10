@@ -12,6 +12,14 @@ import { useNavigate } from "react-router-dom"
 import { signUpSchema } from '../schemas';
 import { SubmissionError } from 'redux-form';
 import Alert from '@mui/material/Alert';
+import SelectFieldWrapper from './FormsUI/SelectField';
+
+const options = [
+  { value: " " },
+  { label: "+91", value: "IN" },
+  { label: "+93", value: "AF" },
+  { label: "+213", value: "DZ" },
+];
 
 const SignIn = (props) => {
   const [alert, setAlert] = useState(false);
@@ -86,9 +94,22 @@ const SignIn = (props) => {
                     autoComplete='off'
                     component={TextfieldWrapper}
                   />
+                </Grid>                 
+                
+                <Grid item xs={3}>
+                 <Field
+                    name="country"
+                    label="country"
+                    type="text"
+                    component={SelectFieldWrapper} 
+                    >
+                      {options.map(option => (
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                     ))}
+                 </Field>
                 </Grid>
 
-                <Grid item xs={12}>
+                <Grid item xs={9}>
                   <Field
                     name="phone"
                     label="Phone"

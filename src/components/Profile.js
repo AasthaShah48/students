@@ -47,11 +47,15 @@ const Profile = () => {
   return (
     <Grid container item xs={12} justifyContent='center'   >
      <Card sx={{ height:436, border: '1px solid', borderColor: 'blueviolet',padding: '10px'}} >
-       <CardMedia
+         { data.length>0 && data ? <CardMedia
          component="img"
          height="50%"
          width="70"
-         image = {data.toString()} />
+         image = {data.toString()} />  :  <CardMedia
+         component="img"
+         height="50%"
+         width="70"
+         image = 'profile.png'/>  }
        <CardContent sx={{ border: '1px solid', borderColor: 'blueviolet', marginTop : '4px',}} >
           <Typography gutterBottom component="div" sx={{ fontSize: 16, fontFamily : `Roboto`, alignItems:'center' , color: 'midnightblue' , fontStyle: 'italic' , fontWeight:'bold' }}>
            { studentdetails.firstName + " " + studentdetails.lastName }
@@ -63,7 +67,7 @@ const Profile = () => {
            Email : {studentdetails.email}
           </Typography>
           <Typography gutterBottom component="div" sx={{ fontSize: 16, fontFamily : `Roboto`, alignItems:'center' ,  color: 'midnightblue' , fontStyle: 'oblique' , fontWeight:'20'}}>
-           Phone : { studentdetails.phone }
+           Phone : { "(" +studentdetails.country + ")"+" " +studentdetails.phone  }
           </Typography>
           <Button  endIcon={<UnsubscribeIcon />}  onClick={() => {setOpen(true); }} sx={{ width: '80%',alignItems:'center', border: '1px solid',borderColor: 'primary.main',height:'10%'}} aria-haspopup="true" aria-controls="confirmation-box"  >
             Unsuscribe

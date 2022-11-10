@@ -25,6 +25,9 @@
   else if (Number(values.age) > 30) {
     errors.age = 'Sorry, you are not eligble'
   }
+  if (values.country === " ") {
+    errors.country = 'Required'
+  } 
   if (!values.phone) {
     errors.phone = 'Required'
   } else if (!/^[6-9]\d{9}$/gi.test(values.phone)) {
