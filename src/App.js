@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import SignIn from './components/SignIn';
+import Login from './components/Login';
+import StudentDetails from './components/StudentDetails';
+import AddDetails from './components/AddDetails';
+import {Routes , Route} from "react-router-dom";
+import ProtectedRoute from './components/protectedRoute';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <Routes>
+          <Route path="/" exact element={<SignIn />} />
+          <Route path="/students/login" exact element={<Login />} />
+          <Route path="/student" exact  element={
+           <ProtectedRoute>
+            <StudentDetails />
+           </ProtectedRoute>
+        }/> 
+          <Route path="/student/details/add" exact element={ <ProtectedRoute><AddDetails /></ProtectedRoute>}/>
+          <Route>404 Not Found!</Route>
+      </Routes>
     </div>
   );
-}
+  }
 
 export default App;
